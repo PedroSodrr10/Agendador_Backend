@@ -12,9 +12,6 @@ public class endereco {
     private String numero;
     private String complemento;
 
-    private Double latitude;
-    private Double longitude;
-
     public String getCep() {
         return cep;
     }
@@ -63,20 +60,5 @@ public class endereco {
         this.complemento = complemento;
     }
 
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
 }
 
