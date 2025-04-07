@@ -1,6 +1,6 @@
 package Agendador.example.Agendador.dto;
 
-import Agendador.example.Agendador.entidades.tipoPessoa;
+import Agendador.example.Agendador.entidades.TipoPessoa;
 import Agendador.example.Agendador.validacao.CNPJ;
 import Agendador.example.Agendador.validacao.CPF;
 import jakarta.validation.Valid;
@@ -28,7 +28,7 @@ public class ContatoRequestDTO {
     private EnderecoDTO endereco;
 
     @NotNull(message = "Tipo de pessoa é obrigatório")
-    private tipoPessoa tipoPessoa;
+    private TipoPessoa tipoPessoa;
 
     public String getNome() {
         return nome;
@@ -78,11 +78,11 @@ public class ContatoRequestDTO {
         this.endereco = endereco;
     }
 
-    public tipoPessoa getTipoPessoa() {
+    public TipoPessoa getTipoPessoa() {
         return tipoPessoa;
     }
 
-    public void setTipoPessoa(tipoPessoa tipoPessoa) {
+    public void setTipoPessoa(TipoPessoa tipoPessoa) {
         this.tipoPessoa = tipoPessoa;
     }
 }

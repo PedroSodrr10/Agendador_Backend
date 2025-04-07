@@ -1,6 +1,6 @@
 package Agendador.example.Agendador.dto;
 
-import Agendador.example.Agendador.entidades.endereco;
+import Agendador.example.Agendador.entidades.Endereco;
 
 public class EnderecoDTO {
 
@@ -13,7 +13,7 @@ public class EnderecoDTO {
 
     public EnderecoDTO() {}
 
-    public EnderecoDTO(endereco endereco) {
+    public EnderecoDTO(Endereco endereco) {
         if (endereco != null) {
             this.cep = endereco.getCep();
             this.logradouro = endereco.getLogradouro();
@@ -24,8 +24,8 @@ public class EnderecoDTO {
         }
     }
 
-    public endereco toEntity() {
-        endereco e = new endereco();
+    public Endereco toEntity() {
+        Endereco e = new Endereco();
         e.setCep(cep);
         e.setLogradouro(logradouro);
         e.setCidade(cidade);

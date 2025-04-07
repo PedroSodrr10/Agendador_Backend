@@ -3,7 +3,7 @@ package Agendador.example.Agendador.service;
 import Agendador.example.Agendador.dto.ContatoRequestDTO;
 import Agendador.example.Agendador.dto.ContatoResponseDTO;
 import Agendador.example.Agendador.entidades.Contato;
-import Agendador.example.Agendador.repository.contatoRepository;
+import Agendador.example.Agendador.repository.ContatoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,22 +11,20 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class contatoService {
+public class ContatoService {
 
-    private final contatoRepository repository;
+    private final ContatoRepository repository;
 
-    public contatoService(contatoRepository repository) {
+    public ContatoService(ContatoRepository repository) {
         this.repository = repository;
     }
 
     public ContatoResponseDTO criar(ContatoRequestDTO dto) {
-        Contato contato = dtoToEntity(dto);
-        return new ContatoResponseDTO(repository.save(contato));
+        return new ContatoResponseDTO(repository.save(dtoToEntity(dto)));
     }
 
     public ContatoResponseDTO editar(Long id, ContatoRequestDTO dto) {
-        Contato contato = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Contato não encontrado"));
+        Contato contato = repository.findById(id).orElseThrow(() -> new RuntimeException("Contato não encontrado"));
 
         contato.setNome(dto.getNome());
         contato.setCpf(dto.getCpf());

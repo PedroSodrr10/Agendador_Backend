@@ -1,6 +1,6 @@
 package Agendador.example.Agendador.entidades;
 
-public enum tipoPessoa {
+public enum TipoPessoa {
     FISICA,
     JURIDICA
 }

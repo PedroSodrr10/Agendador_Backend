@@ -26,14 +26,14 @@ public class Contato {
     private String telefone;
 
     @Embedded
-    private endereco endereco;
+    private Endereco endereco;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private tipoPessoa tipoPessoa;
+    private TipoPessoa tipoPessoa;
 
     @ManyToMany(mappedBy = "contatos")
-    private Set<usuario> usuarios = new HashSet<>();
+    private Set<Usuario> usuarios = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -83,27 +83,28 @@ public class Contato {
         this.telefone = telefone;
     }
 
-    public endereco getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(endereco endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
-    public tipoPessoa getTipoPessoa() {
+    public TipoPessoa getTipoPessoa() {
         return tipoPessoa;
     }
 
-    public void setTipoPessoa(tipoPessoa tipoPessoa) {
+    public void setTipoPessoa(TipoPessoa tipoPessoa) {
         this.tipoPessoa = tipoPessoa;
     }
 
-    public Set<usuario> getUsuarios() {
+    public Set<Usuario> getUsuarios() {
         return usuarios;
     }
 
-    public void setUsuarios(Set<usuario> usuarios) {
+    public void setUsuarios(Set<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
+
 }

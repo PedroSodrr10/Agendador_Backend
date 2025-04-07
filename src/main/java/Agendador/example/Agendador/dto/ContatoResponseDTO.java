@@ -1,7 +1,7 @@
 package Agendador.example.Agendador.dto;
 
 import Agendador.example.Agendador.entidades.Contato;
-import Agendador.example.Agendador.entidades.tipoPessoa;
+import Agendador.example.Agendador.entidades.TipoPessoa;
 
 public class ContatoResponseDTO {
 
@@ -11,7 +11,7 @@ public class ContatoResponseDTO {
     private String email;
     private String telefone;
     private EnderecoDTO endereco;
-    private tipoPessoa tipoPessoa;
+    private TipoPessoa tipoPessoa;
 
     public ContatoResponseDTO(Contato contato) {
         this.id = contato.getId();
@@ -47,7 +47,7 @@ public class ContatoResponseDTO {
         return endereco;
     }
 
-    public tipoPessoa getTipoPessoa() {
+    public TipoPessoa getTipoPessoa() {
         return tipoPessoa;
     }
 }

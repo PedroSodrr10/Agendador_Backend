@@ -7,9 +7,10 @@ public class CNPJValidator implements ConstraintValidator<CNPJ, String> {
 
     @Override
     public boolean isValid(String cnpj, ConstraintValidatorContext context) {
-        if (cnpj == null || !cnpj.matches("\\d{14}")) return false;
-
-        // Verifica se todos os dígitos são iguais
+        if (cnpj == null || cnpj.isBlank()) {
+            return true;
+        }
+        if (!cnpj.matches("\\d{14}")) return false;
         if (cnpj.chars().distinct().count() == 1) return false;
 
         try {

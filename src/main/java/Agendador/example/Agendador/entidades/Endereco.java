@@ -3,7 +3,7 @@ package Agendador.example.Agendador.entidades;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class endereco {
+public class Endereco {
 
     private String cep;
     private String logradouro;

@@ -7,11 +7,13 @@ public class CPFValidator implements ConstraintValidator<CPF, String> {
 
     @Override
     public boolean isValid(String cpf, ConstraintValidatorContext context) {
-        if (cpf == null || cpf.length() != 11 || !cpf.matches("\\d{11}")) {
-            return false;
+        if (cpf == null || cpf.isBlank()) {
+            return true;
         }
 
-        if (cpf.chars().distinct().count() == 1) {
+        cpf = cpf.replaceAll("\\D", "");
+
+        if (cpf.length() != 11 || cpf.chars().distinct().count() == 1) {
             return false;
         }
 

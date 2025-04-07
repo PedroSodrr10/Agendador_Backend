@@ -2,7 +2,7 @@ package Agendador.example.Agendador.controller;
 
 import Agendador.example.Agendador.dto.ContatoRequestDTO;
 import Agendador.example.Agendador.dto.ContatoResponseDTO;
-import Agendador.example.Agendador.service.contatoService;
+import Agendador.example.Agendador.service.ContatoService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Contatos")
-public class contatoController {
+public class ContatoController {
 
-    private final contatoService service;
+    private final ContatoService service;
 
-    public contatoController(contatoService service) {
+    public ContatoController(ContatoService service) {
         this.service = service;
     }
 
