@@ -6,6 +6,8 @@ import Agendador.example.Agendador.entidades.Contato;
 import Agendador.example.Agendador.exception.ResourceNotFoundException;
 import Agendador.example.Agendador.repository.ContatoRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,10 +40,12 @@ public class ContatoService {
         return new ContatoResponseDTO(repository.save(contato));
     }
 
-    public List<ContatoResponseDTO> listarTodos() {
-        return repository.findAll().stream()
-                .map(ContatoResponseDTO::new)
-                .collect(Collectors.toList());
+    public Page<ContatoResponseDTO> listar(String nome, Pageable pageable) {
+        Page<Contato> pagina = (nome == null || nome.isBlank())
+                ? repository.findAll(pageable)
+                : repository.findByNomeContainingIgnoreCase(nome, pageable);
+
+        return pagina.map(ContatoResponseDTO::new);
     }
 
     public Optional<ContatoResponseDTO> buscarPorId(Long id) {
