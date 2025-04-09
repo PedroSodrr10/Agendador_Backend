@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = ContatoValidoValidator.class)
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ContatoValido {
+public @interface ValidContato {
     String message() default "CPF ou CNPJ obrigatório de acordo com o tipo de pessoa";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};

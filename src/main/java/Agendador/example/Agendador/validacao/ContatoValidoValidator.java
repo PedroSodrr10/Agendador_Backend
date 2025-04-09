@@ -5,7 +5,7 @@ import Agendador.example.Agendador.entidades.TipoPessoa;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class ContatoValidoValidator implements ConstraintValidator<ContatoValido, ContatoRequestDTO> {
+public class ContatoValidoValidator implements ConstraintValidator<ValidContato, ContatoRequestDTO> {
 
     @Override
     public boolean isValid(ContatoRequestDTO dto, ConstraintValidatorContext context) {

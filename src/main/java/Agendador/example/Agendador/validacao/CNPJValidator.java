@@ -3,7 +3,7 @@ package Agendador.example.Agendador.validacao;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class CNPJValidator implements ConstraintValidator<CNPJ, String> {
+public class CNPJValidator implements ConstraintValidator<ValidCNPJ, String> {
 
     @Override
     public boolean isValid(String cnpj, ConstraintValidatorContext context) {

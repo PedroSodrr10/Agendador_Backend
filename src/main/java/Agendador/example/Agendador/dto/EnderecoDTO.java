@@ -1,13 +1,13 @@
 package Agendador.example.Agendador.dto;
 
 import Agendador.example.Agendador.entidades.Endereco;
-import Agendador.example.Agendador.validacao.CEP;
+import Agendador.example.Agendador.validacao.ValidCEP;
 import jakarta.validation.constraints.NotBlank;
 
 public class EnderecoDTO {
 
     @NotBlank(message = "CEP é obrigatório")
-    @CEP
+    @ValidCEP
     private String cep;
 
     @NotBlank(message = "Logradouro é obrigatório")

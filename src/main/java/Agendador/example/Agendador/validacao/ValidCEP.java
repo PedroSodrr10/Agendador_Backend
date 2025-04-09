@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = CEPValidator.class)
 @Target({ ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CEP {
+public @interface ValidCEP {
     String message() default "CEP inválido. Use o formato 00000-000 ou 00000000";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};

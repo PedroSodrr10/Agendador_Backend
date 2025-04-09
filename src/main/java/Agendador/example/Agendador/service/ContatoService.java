@@ -3,6 +3,7 @@ package Agendador.example.Agendador.service;
 import Agendador.example.Agendador.dto.ContatoRequestDTO;
 import Agendador.example.Agendador.dto.ContatoResponseDTO;
 import Agendador.example.Agendador.entidades.Contato;
+import Agendador.example.Agendador.exception.ResourceNotFoundException;
 import Agendador.example.Agendador.repository.ContatoRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,8 @@ public class ContatoService {
     }
 
     public ContatoResponseDTO editar(Long id, ContatoRequestDTO dto) {
-        Contato contato = repository.findById(id).orElseThrow(() -> new RuntimeException("Contato não encontrado"));
+        Contato contato = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Contato com ID " + id + " não encontrado"));
 
         contato.setNome(dto.getNome());
         contato.setCpf(dto.getCpf());

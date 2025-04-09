@@ -1,24 +1,24 @@
 package Agendador.example.Agendador.dto;
 
 import Agendador.example.Agendador.entidades.TipoPessoa;
-import Agendador.example.Agendador.validacao.CNPJ;
-import Agendador.example.Agendador.validacao.CPF;
-import Agendador.example.Agendador.validacao.ContatoValido;
+import Agendador.example.Agendador.validacao.ValidCNPJ;
+import Agendador.example.Agendador.validacao.ValidCPF;
+import Agendador.example.Agendador.validacao.ValidContato;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-@ContatoValido
+@ValidContato
 public class ContatoRequestDTO {
 
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
-    @CPF
+    @ValidCPF
     private String cpf;
 
-    @CNPJ
+    @ValidCNPJ
     private String cnpj;
 
     @Email(message = "E-mail inválido")

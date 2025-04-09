@@ -3,7 +3,7 @@ package Agendador.example.Agendador.validacao;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class CPFValidator implements ConstraintValidator<CPF, String> {
+public class CPFValidator implements ConstraintValidator<ValidCPF, String> {
 
     @Override
     public boolean isValid(String cpf, ConstraintValidatorContext context) {
