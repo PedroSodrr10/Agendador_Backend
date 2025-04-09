@@ -1,5 +1,6 @@
 package Agendador.example.Agendador.entidades;
 
+import Agendador.example.Agendador.validacao.CEP;
 import jakarta.persistence.*;
 
 import java.util.HashSet;

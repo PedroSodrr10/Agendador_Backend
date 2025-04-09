@@ -1,14 +1,27 @@
 package Agendador.example.Agendador.dto;
 
 import Agendador.example.Agendador.entidades.Endereco;
+import Agendador.example.Agendador.validacao.CEP;
+import jakarta.validation.constraints.NotBlank;
 
 public class EnderecoDTO {
 
+    @NotBlank(message = "CEP é obrigatório")
+    @CEP
     private String cep;
+
+    @NotBlank(message = "Logradouro é obrigatório")
     private String logradouro;
+
+    @NotBlank(message = "Cidade é obrigatória")
     private String cidade;
+
+    @NotBlank(message = "Estado é obrigatório")
     private String estado;
+
+    @NotBlank(message = "Número é obrigatório")
     private String numero;
+
     private String complemento;
 
     public EnderecoDTO() {}

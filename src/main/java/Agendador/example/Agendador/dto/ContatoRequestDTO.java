@@ -3,11 +3,13 @@ package Agendador.example.Agendador.dto;
 import Agendador.example.Agendador.entidades.TipoPessoa;
 import Agendador.example.Agendador.validacao.CNPJ;
 import Agendador.example.Agendador.validacao.CPF;
+import Agendador.example.Agendador.validacao.ContatoValido;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+@ContatoValido
 public class ContatoRequestDTO {
 
     @NotBlank(message = "Nome é obrigatório")
@@ -85,4 +87,5 @@ public class ContatoRequestDTO {
     public void setTipoPessoa(TipoPessoa tipoPessoa) {
         this.tipoPessoa = tipoPessoa;
     }
+
 }
